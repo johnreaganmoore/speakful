@@ -38,3 +38,32 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+gem 'devise'
+gem 'devise_invitable'
+gem 'haml-rails'
+gem 'pg'
+gem 'sendgrid'
+gem 'unicorn'
+gem 'unicorn-rails'
+gem 'upmin-admin'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_20]
+  gem 'html2haml'
+  gem 'hub', :require=>nil
+  gem 'quiet_assets'
+  gem 'rails_apps_pages'
+  gem 'rails_layout'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-rescue'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
+
