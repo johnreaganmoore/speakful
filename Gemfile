@@ -17,6 +17,8 @@ gem 'sendgrid'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'upmin-admin'
+gem 'twilio-ruby'
+gem 'figaro'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]
