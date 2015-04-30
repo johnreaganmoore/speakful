@@ -1,7 +1,7 @@
 class Message < ActiveRecord::Base
 
 	before_create :make_voice_link
-	after_create :send_text_message
+	# after_create :send_text_message
 
 	belongs_to :user
 
@@ -18,20 +18,20 @@ class Message < ActiveRecord::Base
 	end
 
 	def send_text_message
-    number_to_send_to = "+16158290839"
+    # number_to_send_to = "+17175032234"
  
-    twilio_sid = ENV["twilio_sid"]
-    twilio_token = ENV["twilio_token"]
-    twilio_phone_number = ENV["twilio_phone_number"]
+    # twilio_sid = ENV["twilio_sid"]
+    # twilio_token = ENV["twilio_token"]
+    # twilio_phone_number = ENV["twilio_phone_number"]
  
-    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+    # @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
  
-    @twilio_client.messages.create(
-      :from => twilio_phone_number,
-      :to => number_to_send_to,
-      :body => "Message from John Reagan:",
-      :media_url => "#{self.make_voice_link}"
-    )
+    # @twilio_client.messages.create(
+    #   :from => twilio_phone_number,
+    #   :to => number_to_send_to,
+    #   :body => "Message from John Reagan:",
+    #   :media_url => "#{self.make_voice_link}"
+    # )
   end
 
 end

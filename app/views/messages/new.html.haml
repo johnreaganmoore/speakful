@@ -1,5 +1,21 @@
-%h1 New message
+= form_for @message do |f|
+	- if @message.errors.any?
+		#error_explanation
+			%h2= "#{pluralize(@message.errors.count, "error")} prohibited this message from being saved:"
+			%ul
+				- @message.errors.full_messages.each do |msg|
+					%li= msg
 
-= render 'form'
+	%div.input-area
+		%div.message-input-area
+			=f.text_area :text, autofocus: true, placeholder: 'What would you like to say?'
+		%div.recipient-input-area
+			=f.text_field :text, placeholder: 'To Whom?'
+		%div.speak-button
+			%button
+				="To whom?"
+				- f.submit
 
-= link_to 'Back', messages_path
+/ = render 'form'
+
+/ = link_to 'Back', messages_path
